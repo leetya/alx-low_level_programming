@@ -13,4 +13,5 @@ int	main(void)
 
 	while (a <= 'z')
 		putchar(a++);
+	return (0);
 }
