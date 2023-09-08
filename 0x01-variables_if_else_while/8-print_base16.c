@@ -20,6 +20,7 @@ int	main(void)
 			putchar(i + 87);
 		i++;
 	}
+	putchar('\n');
 	/*
 	*	solve the tax in other way.
 	*   char *hexa = "0123456789abcdef";
