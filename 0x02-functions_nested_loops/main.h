@@ -6,5 +6,6 @@
 int _putchar(int c);
 void	ft_puts(char *str);
 void    print_alphabet(void);
+void    print_alphabet_x10(void);
 
 #endif

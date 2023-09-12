@@ -2,17 +2,21 @@
 #include <stdio.h>
 
 /**
- * print_alphabet - print the alphabet to the stdout
+ * print_alphabet_x10 - print the alphabet to the stdout
 */
 
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
-	int a = 'a';
+	int i;
+	int j;
 
-	for (int i = 10; i != 0; i--)
+	for (i = 10; i != 0; i--)
 	{
-		for (int j = 97; j <= 122; j++)
-			_putchar(j);
-		_putchar('\n');
+		for (j = 97; j <= 122; j++)
+			putchar(j);
+		putchar('\n');
 	}
+}
+
+int main(void){print_alphabet_x10();
 }
