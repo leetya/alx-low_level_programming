@@ -23,12 +23,12 @@ void jack_bauer(void)
 					break;
 				m++;
 			}
-			putchar(h + 48);
-			putchar(h1 + 48);
-			putchar(':');
-			putchar(m + 48);
-			putchar(m1 + 48);
-			putchar('\n');
+			_putchar(h + 48);
+			_putchar(h1 + 48);
+			_putchar(':');
+			_putchar(m + 48);
+			_putchar(m1 + 48);
+			_putchar('\n');
 			m1++;
 		}
 		if (h1 == 3 && h == 2)
