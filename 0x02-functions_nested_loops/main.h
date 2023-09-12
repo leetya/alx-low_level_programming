@@ -5,5 +5,6 @@
 
 int _putchar(int c);
 void	ft_puts(char *str);
+void    print_alphabet(void);
 
 #endif
