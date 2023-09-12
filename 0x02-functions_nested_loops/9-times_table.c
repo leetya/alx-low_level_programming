@@ -22,9 +22,7 @@ void times_table(void)
 					_putchar(' ');
 			}
 			if (res <= 9)
-			{
 				_putchar((res) + 48);
-			}
 			else
 			{
 				_putchar((res / 10) + 48);
