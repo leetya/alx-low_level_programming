@@ -32,6 +32,6 @@ void	ft_puts(char *str)
 
 int main(void)
 {
-	ft_puts("_putchar");
+	ft_puts("_putchar\n");
 	return (0);
 }
