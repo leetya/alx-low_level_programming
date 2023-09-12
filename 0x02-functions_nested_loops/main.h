@@ -3,7 +3,7 @@
 
 #include <unistd.h>
 
-void	_putchar(int c);
+int _putchar(int c);
 void	ft_puts(char *str);
 
 #endif

@@ -1,16 +1,6 @@
 #include "main.h"
 
 /**
- * _putchar - print a char to the stdout
- * @c: the char to be printed.
-*/
-
-void	_putchar(int c)
-{
-	write(1, &c, 1);
-}
-
-/**
  * ft_puts - print a string to the stdout
  * @str: the string to be printed.
 */
