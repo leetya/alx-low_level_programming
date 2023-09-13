@@ -4,9 +4,9 @@ int main(void)
         int a, b, c;
         int largest;
 
-        c = 200;
-        b = 290;
-        a = 2000;
+        c = 101;
+        b = -200;
+        a = -1;
 
         largest = largest_number(a, b, c);
 
