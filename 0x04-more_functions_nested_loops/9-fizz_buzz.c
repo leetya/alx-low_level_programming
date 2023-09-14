@@ -22,11 +22,13 @@ void    fizz_buzz(void)
 			printf("Buzz");
 		else
 			printf("%d", i);
+		printf(" ");
 	}
+	printf("\n");
 }
 /**
  * main - entry point
- * Return: always 0.
+ * Return: always 0
 */
 
 int main(void)
