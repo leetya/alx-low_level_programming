@@ -15,7 +15,7 @@ int _atoi(char *s)
 	res = 0;
 	sign = 1;
 	n = 0;
-	if (*s)
+	if (!*s)
 		return (0);
 	while ((*s >= 7 && *s <= 11) || *s == 32
 		|| !(*s >= '0' && *s <= '9'))
