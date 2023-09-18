@@ -31,7 +31,7 @@ int _atoi(char *s)
 	n = 0;
 	if (*s)
 		return (0);
-	while (*s >= 7 && *s <= 11 || *s == 32
+	while ((*s >= 7 && *s <= 11) || *s == 32
 		|| (!_isdigit(*s)))
 	{
 		if (!*s)
