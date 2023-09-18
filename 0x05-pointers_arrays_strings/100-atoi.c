@@ -22,16 +22,20 @@ int _isdigit(int c)
 
 int _atoi(char *s)
 {
-	int res;
+	unsigned int res;
 	int sign;
 	int n;
 
 	res = 0;
 	sign = 1;
 	n = 0;
-	while ((*s >= 7 && *s <= 11) || *s == 32
-		|| !_isdigit(*s))
+	if (*s)
+		return (0);
+	while (*s >= 7 && *s <= 11 || *s == 32
+		|| (!_isdigit(*s)))
 	{
+		if (!*s)
+			break;
 		if (*s == '-')
 			sign *= -1;
 		s++;
