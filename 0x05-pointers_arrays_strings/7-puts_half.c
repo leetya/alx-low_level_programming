@@ -24,10 +24,11 @@ void _puts(char *str)
 {
 	while (*str)
 	{
-		_putchar(*str);
+		putchar(*str);
 		str++;
 	}
-	_putchar('\n');
+	putchar('|');
+	putchar('\n');
 }
 
 /**
@@ -40,6 +41,6 @@ void puts_half(char *str)
 	int len = _strlen(str);
 
 	if (len % 2 != 0)
-		len--;
+		len = _strlen(str) - 1;
 	_puts(str + (len / 2));
 }
