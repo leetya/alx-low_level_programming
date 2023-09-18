@@ -43,7 +43,6 @@ void puts_half(char *str)
 		_puts(str + (len / 2));
 	else
 	{
-		len = len - 1;
-		_puts(str + len / 2);
+		_puts(str + ((len - 1) / 2));
 	}
 }
