@@ -47,6 +47,3 @@ void puts_half(char *str)
 		_puts(str + len / 2);
 	}
 }
-int main(){
-	puts_half("Holberton!");
-}
