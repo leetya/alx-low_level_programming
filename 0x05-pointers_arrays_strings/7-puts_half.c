@@ -39,11 +39,14 @@ void puts_half(char *str)
 {
 	int len = _strlen(str);
 
-	if (len % 2)
+	if (len % 2 == 0)
 		_puts(str + (len / 2));
 	else
 	{
 		len = len - 1;
 		_puts(str+ len / 2);
 	}
+}
+int main(){
+	puts_half("Holberton!");
 }
