@@ -47,5 +47,4 @@ void puts_half(char *str)
 	}
 	else if (len % 2 == 0)
 		_puts(str + (len / 2));
-	_putchar('\n');
 }
