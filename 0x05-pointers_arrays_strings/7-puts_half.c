@@ -43,12 +43,12 @@ void puts_half(char *str)
 	if (len % 2 == 0)
 	{
 		for (i = len / 2; str[i] != '\0'; i++)
-			putchar(str[i]);
+			_putchar(str[i]);
 	}
 	else if (len % 2)
 	{
 		for (i = (len - 1) / 2; str[i] != '\0'; i++)
-			putchar(str[i + 1]);
+			_putchar(str[i + 1]);
 	}
 	_putchar('\n');
 }
