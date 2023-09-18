@@ -45,7 +45,3 @@ void puts_half(char *str)
 	}
 	_puts(str + (len / 2));
 }
-
-int main(void){
-	puts_half("12346079");
-}
