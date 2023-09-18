@@ -44,7 +44,7 @@ void puts_half(char *str)
 	else
 	{
 		len = len - 1;
-		_puts(str+ len / 2);
+		_puts(str + len / 2);
 	}
 }
 int main(){
