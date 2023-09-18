@@ -38,11 +38,16 @@ void _puts(char *str)
 void puts_half(char *str)
 {
 	int len = _strlen(str);
+	int i;
 
 	if (len % 2 == 0)
-		_puts(str + (len / 2));
+	{
+		for (i = len / 2; str[i] != '\0'; i++)
+			putchar(str[i]);
+	}
 	else
 	{
-		_puts(str + ((len - 1) / 2));
+		for (i = (len - 1) / 2; str[i] != '\0'; i++)
+			putchar(str[i]);
 	}
 }
