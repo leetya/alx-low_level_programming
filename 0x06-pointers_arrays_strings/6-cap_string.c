@@ -51,7 +51,7 @@ char *cap_string(char *s)
 {
 	int i, cap;
 
-	cap = 1;
+	cap = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (!cap && _isalpha(s[i]) && !_isupper(s[i]))
