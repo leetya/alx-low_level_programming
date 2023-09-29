@@ -12,7 +12,7 @@ int wildcmp_rec(char *s, char *ss, int flag)
 {
 	if (!*s && *ss && !flag)
 		return (0);
-	if (!*s)
+	if (!*s || !*ss)
 		return (1);
 	if (*s == *ss && flag)
 		flag = 0;
