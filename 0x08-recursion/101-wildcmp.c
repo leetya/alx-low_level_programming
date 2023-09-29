@@ -19,13 +19,13 @@ int wildcmp_rec(char *s, char *ss, int flag)
 	if (*ss == '*')
 	{
 		flag = 1;
-		test(s, ++ss, flag);
+		wildcmp_rec(s, ++ss, flag);
 	}
 	if (*s != *ss && !flag)
 		return (0);
 	if (!flag)
 		ss++;
-	return (test(++s, ss, flag));
+	return (wildcmp_rec(++s, ss, flag));
 }
 
 /**
