@@ -19,6 +19,8 @@ int wildcmp_rec(char *s, char *ss, int flag)
 	if (*ss == '*')
 	{
 		flag = 1;
+		if (*s == *(s+1))
+			s++;
 		wildcmp_rec(s, ++ss, flag);
 	}
 	if (*s != *ss && !flag)
