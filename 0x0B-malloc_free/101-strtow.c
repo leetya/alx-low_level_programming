@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * how_many_words - test;
- * @str: test
- * Return: test
+ * how_many_words - a helper function that count how many words in a string
+ * words are separated by spaces;
+ * @str: the string
+ * Return: how many words
 */
 
 int how_many_words(char *str)
@@ -25,11 +26,12 @@ int how_many_words(char *str)
 }
 
 /**
- * allocate_and_fill - test
- * @str: test
- * @new: test
- * @pos: test
- * Return: test
+ * allocate_and_fill - a helper function that allocate
+ * and fill the content of the matrix
+ * @str: the string to be splited
+ * @new: the matrix
+ * @pos: the pos of the n'th element
+ * Return: the new position of str
 */
 
 char *allocate_and_fill(char *str, char **new, int pos)
@@ -41,6 +43,8 @@ char *allocate_and_fill(char *str, char **new, int pos)
 		i++;
 	}
 	new[pos] = malloc(sizeof(char) * (i + 1));
+	if (!new[pos])
+		return (NULL);
 	i = 0;
 	while (*str && *str != ' ')
 	{
@@ -53,9 +57,9 @@ char *allocate_and_fill(char *str, char **new, int pos)
 }
 
 /**
- * strtow - test
- * @str: test
- * Return: test
+ * strtow - a function that splits a string into words.
+ * @str: the string to be splited
+ * Return: a pointer to the matrix
 */
 
 char **strtow(char *str)
@@ -66,6 +70,8 @@ char **strtow(char *str)
 	if (!str || !*str)
 		return (NULL);
 	words = how_many_words(str);
+	if (!words)
+		return (NULL);
 	new = malloc(sizeof(char *) * (words + 1));
 	if (!new)
 		return (NULL);
