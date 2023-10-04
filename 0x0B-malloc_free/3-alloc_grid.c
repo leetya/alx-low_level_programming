@@ -2,6 +2,7 @@
 
 /**
  * _free - a function to free memory
+ * @i: the number of allocate memory before the fail
  * @arr: the memory to be freed
 */
 
