@@ -1,6 +1,11 @@
 #include "main.h"
 
-_free(int **arr)
+/**
+ * _free - a function to free memory
+ * @arr: the memory to be freed
+*/
+
+void _free(int **arr)
 {
 	while (*arr)
 		free(*arr);
