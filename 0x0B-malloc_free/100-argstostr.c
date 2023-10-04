@@ -19,6 +19,7 @@ int _strlen(char *s)
  * argstostr - a function that concatenates all the arguments of your program.
  * @ac: the number of arguments
  * @av: the arguments
+ * Return: a pointer to the new s
 */
 
 char *argstostr(int ac, char **av)
@@ -27,7 +28,7 @@ char *argstostr(int ac, char **av)
 	int j;
 	int len = 0;
 	char *new;
-	
+
 	if (!ac || !av)
 		return (NULL);
 
@@ -48,18 +49,4 @@ char *argstostr(int ac, char **av)
 	}
 	new[len] = '\0';
 	return (new);
-}
-
-int main(int ac, char *av[])
-{
-	char *s;
-
-	s = argstostr(ac, av);
-	if (s == NULL)
-	{
-		return (1);
-	}
-	printf("%s", s);
-	free(s);
-	return (0);
 }
