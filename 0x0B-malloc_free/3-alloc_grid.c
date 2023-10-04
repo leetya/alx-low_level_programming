@@ -8,7 +8,7 @@
 void _free(int **arr, int i)
 {
 	while (i != -1)
-		free(arr[i]);
+		free(arr[i--]);
 	free(arr);
 }
 
@@ -35,7 +35,8 @@ int **alloc_grid(int width, int height)
 		two_d[i] = malloc(sizeof(int) * width);
 		if (!two_d[i])
 		{
-			_free(two_d, --i);
+			_free(two_d, i);
+			system("leaks a.out");
 			return (NULL);
 		}
 		for (j = 0; j < width; j++)
