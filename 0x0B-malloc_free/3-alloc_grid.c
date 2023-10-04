@@ -20,11 +20,12 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		two_d[i] = malloc(sizeof(char) * width);
+		two_d[i] = malloc(sizeof(int) * width);
 		if (!two_d[i])
 			return (NULL);
 		for (j = 0; j < width; j++)
 			two_d[i][j] = 0;
+		printf("in\n");
 	}
 	return (two_d);
 }
