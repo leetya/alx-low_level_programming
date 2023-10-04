@@ -3,7 +3,7 @@
 char *create_array(unsigned int size, char c)
 {
     char *arr;
-    int i;
+    unsigned int i;
 
     if (!size)
         return (NULL);
