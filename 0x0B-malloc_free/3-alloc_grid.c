@@ -25,7 +25,6 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		for (j = 0; j < width; j++)
 			two_d[i][j] = 0;
-		printf("in\n");
 	}
 	return (two_d);
 }
