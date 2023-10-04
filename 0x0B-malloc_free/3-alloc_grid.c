@@ -5,10 +5,11 @@
  * @arr: the memory to be freed
 */
 
-void _free(int **arr)
+void _free(int **arr, int i)
 {
-	while (*arr)
-		free(*arr);
+	while (i != -1)
+		free(arr[i]);
+	free(arr);
 }
 
 /**
@@ -34,8 +35,7 @@ int **alloc_grid(int width, int height)
 		two_d[i] = malloc(sizeof(int) * width);
 		if (!two_d[i])
 		{
-			_free(two_d);
-			free(two_d);
+			_free(two_d, --i);
 			return (NULL);
 		}
 		for (j = 0; j < width; j++)
