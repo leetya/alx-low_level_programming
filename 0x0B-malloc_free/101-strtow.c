@@ -25,23 +25,31 @@ int how_many_words(char *str)
 }
 
 /**
- * word_lenght - test
+ * allocate_and_fill - test
  * @str: test
+ * @new: test
+ * @pos: test
  * Return: test
 */
 
-int word_lenght(char *str)
+char *allocate_and_fill(char *str, char **new, int pos)
 {
-	int len = 0;
+	int i = 0;
 
-	while (*str && *str == ' ')
-		str++;
+	while (str[i] && str[i] != ' ')
+	{
+		i++;
+	}
+	new[pos] = malloc(sizeof(char) * (i + 1));
+	i = 0;
 	while (*str && *str != ' ')
 	{
-		len++;
+		new[pos][i] = *str;
 		str++;
+		i++;
 	}
-	return (len);
+	new[pos][i] = '\0';
+	return (--str);
 }
 
 /**
@@ -53,7 +61,7 @@ int word_lenght(char *str)
 char **strtow(char *str)
 {
 	char **new;
-	int	words, i, j, space;
+	int	words, i;
 
 	if (!str || !*str)
 		return (NULL);
@@ -63,26 +71,10 @@ char **strtow(char *str)
 		return (NULL);
 	new[words] = NULL;
 	i = 0;
-	j = 0;
-	space = 0;
 	while (*str)
 	{
-		j = 0;
-		while (*str != ' ')
-		{
-			new[i - 1][j++] = *str;
-			space = 0;
-			str++;
-		}
-		if (*str == ' ' && !space)
-		{
-			words = word_lenght(str);
-			if (!words)
-				break;
-			new[i] = malloc(sizeof(char) * (words + 1));
-			i++;
-			space = 1;
-		}
+		if (*str != ' ')
+			str = allocate_and_fill(str, new, i++);
 		str++;
 	}
 	return (new);
