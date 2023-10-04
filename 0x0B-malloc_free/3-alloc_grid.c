@@ -9,7 +9,6 @@ void _free(int **arr)
 {
 	while (*arr)
 		free(*arr);
-	free(arr);
 }
 
 /**
@@ -36,6 +35,7 @@ int **alloc_grid(int width, int height)
 		if (!two_d[i])
 		{
 			_free(two_d);
+			free(two_d);
 			return (NULL);
 		}
 		for (j = 0; j < width; j++)
