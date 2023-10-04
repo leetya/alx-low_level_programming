@@ -1,5 +1,12 @@
 #include "main.h"
 
+_free(int **arr)
+{
+	while (*arr)
+		free(*arr);
+	free(arr);
+}
+
 /**
  * alloc_grid - a function
  * that returns a pointer to a 2 dimensional array of integers.
@@ -23,7 +30,7 @@ int **alloc_grid(int width, int height)
 		two_d[i] = malloc(sizeof(int) * width);
 		if (!two_d[i])
 		{
-			free(two_d);
+			_free(two_d);
 			return (NULL);
 		}
 		for (j = 0; j < width; j++)
