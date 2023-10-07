@@ -1,36 +1,30 @@
 #include "main.h"
 
 /**
- * _strlen - a function that returns the length of a string.
- * @s: the string to be counted.
- * Return: the length of the string
-*/
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (s[len])
-		len++;
-	return (len);
-}
-
-/**
- * _strcat - concatenates
- * @dest: destination
- * @src: source
- * Return: Returns a pointer to the resulting string dest
-*/
-
+ * _strcat - concatenates two strings
+ * @dest: string to append to
+ * @src: string to add
+ *
+ * Return: a pointer to the resulting string
+ */
 char *_strcat(char *dest, char *src)
 {
-	int dlen = _strlen(dest);
+	int i, j;
 
-	while (*src)
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+		i++;
+
+	while (src[j] != '\0')
 	{
-		dest[dlen++] = *src;
-		src++;
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
-	dest[dlen] = '\0';
+
+	dest[i] = '\0';
+
 	return (dest);
 }
