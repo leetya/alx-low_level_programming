@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * _calloc - calloc
+ * @nmemb: elemets
+ * @size: their size
+ * Return: address
+*/
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
     char *p;
