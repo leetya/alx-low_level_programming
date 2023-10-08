@@ -11,7 +11,7 @@ void    *malloc_checked(unsigned int b)
 	void *p;
 
 	if (b < INT_MAX)
-		p = malloc(b);
+		p = malloc(b * sizeof(unsigned int));
 	else
 		exit(98);
 	if (!p)
