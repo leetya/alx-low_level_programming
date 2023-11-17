@@ -9,8 +9,9 @@
 
 int main(int ac, char **av)
 {
-	(void)av;
+	int i;
 
-	printf("%d\n", ac - 1);
+	for (i = 0; i < ac; i++)
+		printf("%s\n", av[i]);
 	return (0);
 }
