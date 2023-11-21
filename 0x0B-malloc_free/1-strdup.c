@@ -17,7 +17,8 @@ int _strlen(char *s)
 }
 
 /**
- * _strdup - a function that returns a pointer to a newly allocated space in memory,
+ * _strdup - a function that returns a pointer
+ * to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter.
  * @str: string to be copied
  * Return: pointer
@@ -30,7 +31,7 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-    len = _strlen(str);
+	len = _strlen(str);
 	strout = (char *)malloc(sizeof(char) * (len + 1));
 	if (strout == NULL)
 		return (NULL);
