@@ -83,6 +83,7 @@ char **strtow(char *str)
 		}
 		else if (c++ == 0)
 			start = i;
+		i++;
 	}
 	res[res_ind] = NULL;
 	return (res);
