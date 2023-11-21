@@ -1,103 +1,89 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * ft_cwrd - sf
- * @s: s
- * @c: c
- * Return: int
+ * _strlen - a function that returns the length of a string.
+ * @s: the string to be counted.
+ * Return: the length of the string
 */
 
-int	ft_cwrd(char const *s, char c)
+int _strlen(char *s)
 {
-	int	i;
-	int	count;
+	int len = 0;
 
-	i = 0;
-	count = 0;
-	if (!s)
-		return (0);
-	while (s[i])
+	while (s[len])
+		len++;
+	return (len);
+}
+
+/**
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
+ *
+ * Return: number of words
+ */
+int count_word(char *s)
+{
+	int flag, c, w;
+
+	flag = 0;
+	w = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
 	{
-		if (i == 0 && s[i] != c)
-			count++;
-		if ((s[i] == c && s[i + 1] != c) && (s[i] == c && s[i + 1] != '\0'))
-			count++;
-		i++;
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
+		{
+			flag = 1;
+			w++;
+		}
 	}
-	return (count);
+
+	return (w);
 }
-
 /**
- * ft_free - sf
- * @spl: s
- * @j: c
- * Return: p
-*/
-
-void	*ft_free(char **spl, int j)
+ * **strtow - splits a string into words
+ * @str: string to split
+ *
+ * Return: pointer to an array of strings (Success)
+ * or NULL (Error)
+ */
+char **strtow(char *str)
 {
-	j -= 1;
-	while (j > 0)
-	{
-		free(spl[j]);
-		j--;
-	}
-	free(spl);
-	return (NULL);
-}
+	char **res, *tmp;
+	int i, res_ind = 0, len = 0,
+	words, c = 0, start, end;
 
-/**
- * ft_wordlen - sf
- * @s: s
- * @c: c
- * Return: i
-*/
-
-int	ft_wordlen(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
-}
-
-/**
- * ft_split - sf
- * @s: s
- * @c: c
- * Return: s
-*/
-
-char	**ft_split(char const *s, char c)
-{
-	int		fc_wnbr;
-	int		wlen;
-	int		i;
-	int		j;
-	char	**d;
-
-	if (!s || !*s)
+	len = _strlen(str);
+	words = count_word(str);
+	if (words == 0)
 		return (NULL);
-	d = malloc((ft_cwrd(s, c) + 1) * sizeof(char *));
-	if (!d)
+	res = (char **) malloc(sizeof(char *) * (words + 1));
+	if (res == NULL)
 		return (NULL);
 	i = 0;
-	j = 0;
-	fc_wnbr = ft_cwrd(s, c);
-	while (j < fc_wnbr)
+	while (i <= len)
 	{
-		while (s[i] == c)
-			i++;
-		wlen = ft_wordlen(&s[i], c);
-		d[j] = ft_substr(s, i, wlen);
-		if (d[j] == NULL)
-			return (ft_free(d, j));
-		j++;
-		i += wlen;
+		if (str[i] == ' ' || str[i] == '\0')
+		{
+			if (c)
+			{
+				end = i;
+				tmp = (char *) malloc(sizeof(char) * (c + 1));
+				if (tmp == NULL)
+					return (NULL);
+				while (start < end)
+					*tmp++ = str[start++];
+				*tmp = '\0';
+				res[res_ind] = tmp - c;
+				res_ind++;
+				c = 0;
+			}
+		}
+		else if (c++ == 0)
+			start = i;
 	}
-	d[j] = NULL;
-	return (d);
+	res[res_ind] = NULL;
+	return (res);
 }
