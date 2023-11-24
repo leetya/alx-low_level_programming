@@ -24,7 +24,7 @@ int _strlen(char *s)
  * Return: pointer of an array of chars
  */
 
-char *str_concat(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new;
 	int s1_len, s2_len, k, i;
