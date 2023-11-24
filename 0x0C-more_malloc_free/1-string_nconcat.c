@@ -17,7 +17,7 @@ int _strlen(char *s)
 }
 
 /**
- * str_concat - concatenates two strings.
+ * string_nconcat - concatenates two strings.
  * @s1: first string.
  * @s2: second string.
  * @n: max number of chars
@@ -27,7 +27,7 @@ int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *new;
-	int s1_len, s2_len, k, i;
+	size_t s1_len, s2_len, k, i;
 
 	if (!s1 || !s2)
 	{
