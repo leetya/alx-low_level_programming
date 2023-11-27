@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * _strlen - a function that returns the length of a string.
@@ -25,10 +26,14 @@ int _strlen(char *s)
 char *_strdup(char *old)
 {
 	char *new;
+	int i;
 
 	new = malloc(_strlen(old));
 	if (!new)
 		return (NULL);
+	for (i = 0; old[i]; i++)
+		new[i] = old[i];
+	new[i] = '\0';
 	return (new);
 }
 
@@ -51,6 +56,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	new->name = _strdup(name);
 	new->owner = _strdup(owner);
+	new->age = age;
 	if (!new->name || !new->owner)
 		return (NULL);
 	return (new);
