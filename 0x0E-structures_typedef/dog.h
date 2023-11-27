@@ -1,0 +1,19 @@
+#ifndef DOG_H
+#define DOG_H
+
+/**
+ * struct dog - dog rep
+ * @name: the name of the dog
+ * @age: the age ///
+ * @owner: the owner ///
+ * Description: this struct represent a dog (fake oop xD)
+*/
+
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+};
+
+#endif
