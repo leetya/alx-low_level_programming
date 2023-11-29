@@ -5,13 +5,14 @@
  * @array: array of elemnts
  * @size: size of the array
  * @cmp: pointer to the function used to compare
+ * Return: the index
 */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
-	if (size > 0 && array && !cmp)
+	if (size > 0 && array && cmp)
 	{
 		for (i = 0; i < size; i++)
 		{
