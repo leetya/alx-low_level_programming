@@ -10,7 +10,7 @@
 int main(int ac, char **av)
 {
 	int bytes, i;
-	int (*f)(int, char **);
+	unsigned char *add;
 
 	if (ac != 2)
 	{
@@ -23,10 +23,10 @@ int main(int ac, char **av)
 		printf("Error\n");
 		exit(2);
 	}
-	f = main;
+	add = (unsigned char *)main;
 	for (i = 0; i < bytes; i++)
 	{
-		printf("%02x ", (unsigned char)f);
+		printf("%02x ", add[i]);
 	}
 	printf("\n");
 	return (0);
