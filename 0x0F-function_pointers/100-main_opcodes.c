@@ -26,7 +26,7 @@ int main(int ac, char **av)
 	add = (unsigned char *)main;
 	for (i = 0; i < bytes; i++)
 	{
-		printf("%02x ", add[i]);
+		printf("%02hhx ", add[i]);
 	}
 	printf("\n");
 	return (0);
