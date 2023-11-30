@@ -39,12 +39,7 @@ void display_str(va_list *p)
 {
 	char *s = va_arg(*p, char *);
 
-	if (!s)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", s);
+	printf("%s", s ? s : "(nil)");
 }
 
 /**
@@ -73,7 +68,7 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == display[j].value)
 			{
-				if (flag)
+				if (flag && flag <= 2)
 					printf(", ");
 				display[j].p(&arg_p);
 				flag++;
