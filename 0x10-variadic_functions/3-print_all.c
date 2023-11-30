@@ -7,7 +7,7 @@
 
 void display_char(va_list *p)
 {
-	printf("%c, ", va_arg(*p, int));
+	printf("%c", va_arg(*p, int));
 }
 
 /**
@@ -17,7 +17,7 @@ void display_char(va_list *p)
 
 void display_int(va_list *p)
 {
-	printf("%d, ", va_arg(*p, int));
+	printf("%d", va_arg(*p, int));
 }
 
 /**
@@ -27,7 +27,7 @@ void display_int(va_list *p)
 
 void display_float(va_list *p)
 {
-	printf("%f, ", va_arg(*p, double));
+	printf("%f", va_arg(*p, double));
 }
 
 /**
@@ -39,7 +39,12 @@ void display_str(va_list *p)
 {
 	char *s = va_arg(*p, char *);
 
-	printf("%s", s ? s : "(nil)");
+	if (!s)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
 }
 
 /**
