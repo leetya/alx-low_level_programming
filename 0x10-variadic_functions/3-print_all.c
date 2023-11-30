@@ -68,7 +68,7 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == display[j].value)
 			{
-				if (flag && flag <= 2)
+				if (flag)
 					printf(", ");
 				display[j].p(&arg_p);
 				flag++;
