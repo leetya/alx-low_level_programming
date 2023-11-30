@@ -58,6 +58,8 @@ void print_all(const char * const format, ...)
 		{'s', display_str}
 	};
 
+	if (!format)
+		return ;
 	va_start(arg_p, format);
 	i = 0;
 	while (format[i])
@@ -77,4 +79,3 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 }
-
