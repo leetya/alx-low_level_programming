@@ -68,7 +68,6 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == display[j].value)
 			{
-
 				display[j].p(&arg_p);
 				flag++;
 			}
