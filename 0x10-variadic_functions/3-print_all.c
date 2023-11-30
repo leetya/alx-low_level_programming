@@ -50,7 +50,7 @@ void display_str(va_list *p)
 void print_all(const char * const format, ...)
 {
 	va_list arg_p;
-	int i, j;
+	int i, j, flag;
 	display_t display[4] = {
 		{'c', display_char},
 		{'i', display_int},
@@ -60,6 +60,7 @@ void print_all(const char * const format, ...)
 
 	va_start(arg_p, format);
 	i = 0;
+	flag = 0;
 	while (format[i])
 	{
 		j = 0;
@@ -67,9 +68,10 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == display[j].value)
 			{
-				display[j].p(&arg_p);
-				if (format[i + 1] != '\0')
+				if (flag)
 					printf(", ");
+				display[j].p(&arg_p);
+				flag++;
 			}
 			j++;
 		}
