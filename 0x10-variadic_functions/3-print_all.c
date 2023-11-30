@@ -39,7 +39,12 @@ void display_str(va_list *p)
 {
 	char *s = va_arg(*p, char *);
 
-	printf("%s", s ? s : "(nil)");
+	if (!s)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
 }
 
 /**
@@ -55,7 +60,7 @@ void print_all(const char * const format, ...)
 		{'c', display_char},
 		{'i', display_int},
 		{'f', display_float},
-		{'s', display_str}
+		{'s', display_str},
 	};
 
 	va_start(arg_p, format);
