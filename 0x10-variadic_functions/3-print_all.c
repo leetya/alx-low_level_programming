@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 		{'s', display_str}
 	};
 
-	if (!format)
+	if (format == NULL)
 		return;
 	va_start(arg_p, format);
 	i = 0;
