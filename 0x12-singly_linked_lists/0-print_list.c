@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * @print_list - prints
+ * print_list - prints
  * @h: linked list
- * Return: size_t 
+ * Return: size_t
  */
 
 size_t print_list(const list_t *h)
@@ -24,6 +24,6 @@ size_t print_list(const list_t *h)
 		}
 		h = h->next;
 		nb++;
-	}    
+	}
 	return (nb);
 }
