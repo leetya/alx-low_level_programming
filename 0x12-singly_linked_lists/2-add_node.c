@@ -6,7 +6,7 @@
  * Return: the length of the string
 */
 
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
 	int len = 0;
 
@@ -26,8 +26,6 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
 
-	if (!head)
-		return (NULL);
 	new = malloc(sizeof(list_t));
 	if (!new)
 		return (NULL);
