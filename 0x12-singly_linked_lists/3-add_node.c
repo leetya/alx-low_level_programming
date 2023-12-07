@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_node - add
+ * add_node_end - add
  * @head: ptohead
  * @str: str_val
  * Return: list_t*
