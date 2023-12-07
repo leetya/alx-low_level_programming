@@ -19,7 +19,7 @@ int _strlen(char *s)
  * add_node - ass
  * @head: ptohead
  * @str: str_val
- * Return: list_t* 
+ * Return: list_t*
  */
 
 list_t *add_node(list_t **head, const char *str)
