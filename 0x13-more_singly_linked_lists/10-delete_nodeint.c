@@ -65,6 +65,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		i++;
 		*head = (*head)->next;
 	}
+	if (!*head)
+		return (-1);
 	tmpn = (*head)->next;
 	(*head)->next = tmpn->next;
 	free(tmpn);
