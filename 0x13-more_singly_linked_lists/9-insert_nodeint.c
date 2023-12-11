@@ -22,6 +22,24 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	return (new);
 }
 
+/**
+ * listint_len -  prints all the elements of a listint_t list.
+ * @h: list
+ * Return: nb
+*/
+
+
+size_t listint_len(const listint_t *h)
+{
+	size_t nb = 0;
+
+	while (h)
+	{
+		nb++;
+		h = h->next;
+	}
+	return (nb);
+}
 
 /**
  * insert_nodeint_at_index -  inserts a new node at a given position.
@@ -41,22 +59,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (!head || !*head)
 		return (NULL);
 	tmp = *head;
+	if (idx > listint_len(*head))
+		return (NULL);
+	if (!idx)
+		return (add_nodeint(head, n));
 	new = malloc(sizeof(listint_t));
 	if (!new)
 		return (NULL);
-	if (!idx)
-	{
-		add_nodeint(head, n);
-		return (new);
-	}
 	new->n = n;
+	i = 0;
 	while (*head && i < idx - 1)
 	{
 		i++;
 		*head = (*head)->next;
 	}
-	if (!*head)
-		return (NULL);
 	tmp2 = (*head)->next;
 	(*head)->next = new;
 	new->next = tmp2;
