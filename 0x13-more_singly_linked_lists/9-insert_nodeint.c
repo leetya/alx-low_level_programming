@@ -55,14 +55,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		i++;
 		*head = (*head)->next;
 	}
-	if (i == idx - 1)
-	{
-		tmp2 = (*head)->next;
-		(*head)->next = new;
-		new->next = tmp2;
-		*head = tmp;
-		return (new);
-	}
+	if (!*head)
+		return (NULL);
+	tmp2 = (*head)->next;
+	(*head)->next = new;
+	new->next = tmp2;
 	*head = tmp;
-	return (NULL);
+	return (new);
 }
