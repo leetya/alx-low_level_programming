@@ -26,7 +26,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		idx--;
 		*head = (*head)->next;
 	}
-	if (!idx - 1)
+	if (!idx - 1 || !idx)
 	{
 		tmp2 = (*head)->next;
 		(*head)->next = new;
