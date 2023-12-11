@@ -53,7 +53,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	if (!head || !*head)
 		return (-1);
-	if (i >= listint_len(*head))
+	if (index > listint_len(*head))
 		return (-1);
 	if (!index)
 	{
