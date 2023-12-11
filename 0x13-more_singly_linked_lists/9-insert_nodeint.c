@@ -52,7 +52,6 @@ size_t listint_len(const listint_t *h)
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *tmp;
-	listint_t *tmp2;
 	listint_t *new;
 	unsigned int i = 0;
 
@@ -72,11 +71,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		i++;
 		*head = (*head)->next;
 	}
-	if (!*head)
-		return (NULL);
-	tmp2 = (*head)->next;
+	new->next = (*head)->next;
 	(*head)->next = new;
-	new->next = tmp2;
 	*head = tmp;
 	return (new);
 }
