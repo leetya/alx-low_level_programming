@@ -16,22 +16,6 @@ int _strlen(const char *s)
 }
 
 /**
- * _pow_recursion - the value of x raised to the power of Y
- * @x: the number
- * @y: the power
- * Return: x to the power of y
-*/
-
-unsigned int _pow_recursion(unsigned int x, unsigned int y)
-{
-	if (y < 0)
-		return (-1);
-	if (y == 0)
-		return (1);
-	return (x * _pow_recursion(x, --y));
-}
-
-/**
  * binary_to_uint - converts an binary to unsigned int
  * @b: the binary as str
  * Return: uint
@@ -51,8 +35,8 @@ unsigned int binary_to_uint(const char *b)
 		if (b[len] != '0' && b[len] != '1')
 			return (0);
 		if (b[len] != '0')
-			res += _pow_recursion(2, pow);
-		pow++;
+			res += pow;
+		pow *= 2;
 		len--;
 	}
 	return (res);
