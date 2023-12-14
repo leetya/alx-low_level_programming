@@ -31,6 +31,11 @@ unsigned int _pow_recursion(unsigned int x, unsigned int y)
 	return (x * _pow_recursion(x, --y));
 }
 
+/**
+ * binary_to_uint - converts an binary to unsigned int
+ * @b: the binary as str
+ * Return: uint
+*/
 
 unsigned int binary_to_uint(const char *b)
 {
