@@ -4,7 +4,7 @@
  * get_bit - get bit at index
  * @n: the nbr
  * @index: indx
- * Return: end
+ * Return: the value of the bit at index index
 */
 
 int get_bit(unsigned long int n, unsigned int index)
